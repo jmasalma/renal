@@ -62,7 +62,7 @@ function calculateDose(value, increase) {
 
 
 
-function check_vals() {
+function check_vals(in_val) {
 
 
 
@@ -125,6 +125,16 @@ function check_vals() {
   ESAonHold = $("#ESAonHold").is(':checked');
 
 
+
+  if (in_val.id === "ESA" && ESA) {
+    $("#ESAonHold").prop( "checked", false );
+    ESAonHold = $("#ESAonHold").is(':checked');
+  }
+
+  if (in_val.id === "ESAonHold" && ESAonHold) {
+    $("#ESA").prop( "checked", false );
+    ESA = $("#ESA").is(':checked');
+  }
 
 
   if ($("#increase").is(':checked')) {

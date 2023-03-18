@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="keywords" content="Phramacy Toolbox Renal Protocols Hemodialysis Anemia Management Iron IV Erythropoiesis Stimulating Agent Peri-Procedure Anticoagulation" />
-    <meta name="description" content="A list of Renal Protocols for Hemodialysis Anemia Management, Erythropoiesis Stimulating Agent (ESA) Assessment, Iron IV Assessment, and Peri-Procedure Management of Anticoagulation" />
+    <meta name="keywords" content="Phramacy Toolbox Renal Protocols Hemodialysis Anemia Management IV Iron Erythropoiesis Stimulating Agent Peri-Procedure Anticoagulation" />
+    <meta name="description" content="A list of Renal Protocols for Hemodialysis Anemia Management, Erythropoiesis Stimulating Agent (ESA) Assessment, IV Iron Assessment, and Peri-Procedure Management of Anticoagulation" />
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
     <meta name="robots" content="index,follow" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Home, Phramacy Renal Protocols" />
-    <meta property="og:description" content="A list of Renal Protocols for Hemodialysis Anemia Management, Erythropoiesis Stimulating Agent (ESA) Assessment, Iron IV Assessment, and Peri-Procedure Management of Anticoagulation" />
+    <meta property="og:description" content="A list of Renal Protocols for Hemodialysis Anemia Management, Erythropoiesis Stimulating Agent (ESA) Assessment, IV Iron Assessment, and Peri-Procedure Management of Anticoagulation" />
     <meta property="og:url" content="https://pharmtoolbox.com/" />
     <meta property="og:site_name" content="Phramacy Renal Protocols" />
     <link rel="canonical" href="https://pharmtoolbox.com/" />
@@ -110,7 +110,7 @@
 
             <div class="row ">
               <div class="col  form-floating">
-                <input type="number" class="form-control" id="cHgb" name="cHgb" required minlength="0" maxlength="3" size="3" pattern="[0-9]*" inputmode="numeric" onChange="check_vals();" />
+                <input type="number" class="form-control" id="cHgb" name="cHgb" required minlength="0" maxlength="3" size="3" pattern="[0-9]*" inputmode="numeric" onChange="check_vals(this);" />
                 <label for="cHgb" class="form-label">Current Hgb measurement</label>
 
 <div class="invalid-feedback">Please provide value</div>
@@ -120,7 +120,7 @@
     
             <div class="row">
               <div class="col form-floating">
-                <input type="number" class="form-control" id="lmHgb" name="lmHgb" required minlength="0" maxlength="3" size="3" pattern="[0-9]*" inputmode="numeric" onChange="check_vals();" />
+                <input type="number" class="form-control" id="lmHgb" name="lmHgb" required minlength="0" maxlength="3" size="3" pattern="[0-9]*" inputmode="numeric" onChange="check_vals(this);" />
                 <label for="lmHgb" class="form-label">Hgb measurement from last month blood work</label>
 
 <div class="invalid-feedback">Please provide value</div>
@@ -130,15 +130,15 @@
     
             <div class="row">
               <div class="col form-check form-switch">
-                <input type="checkbox" class="form-check-input" id="ESA" name="ESA" onChange="check_vals();" checked />
+                <input type="checkbox" class="form-check-input" id="ESA" name="ESA" onChange="check_vals(this);" checked />
                 <label for="ESA" class="form-check-label">Is patient receiving ESA (Aranesp/Darbepoetin)</label>
               </div>
             </div>
     
             <div class="row">
               <div class="col form-check form-switch">
-                <input type="checkbox" class="form-check-input" id="ESAonHold" name="ESAonHold" onChange="check_vals();" />
-                <label for="ESAonHold" class="form-check-label">Is ESA (Aranesp/Darbepoetin) on Hold or discontinued because Hb above target</label>
+                <input type="checkbox" class="form-check-input" id="ESAonHold" name="ESAonHold" onChange="check_vals(this);" />
+                <label for="ESAonHold" class="form-check-label">Is ESA (Aranesp/Darbepoetin) on hold or discontinued because Hb above target</label>
               </div>
             </div>
     
@@ -150,21 +150,21 @@
     
             <div class="row">
               <div class="col ">
-                <input type="radio" class="form-check-input" id="increase" name="changedESA" onChange="check_vals();" value="Increased" />
+                <input type="radio" class="form-check-input" id="increase" name="changedESA" onChange="check_vals(this);" value="Increased" />
                 <label for="increase" class="form-check-label">Increased</label>
               </div>
             </div>
     
             <div class="row">
               <div class="col ">
-                <input type="radio" class="form-check-input" id="noChange" name="changedESA" onChange="check_vals();" value="No change" checked />
+                <input type="radio" class="form-check-input" id="noChange" name="changedESA" onChange="check_vals(this);" value="No change" checked />
                 <label for="noChange" class="form-check-label">No change</label>
               </div>
             </div>
     
             <div class="row">
               <div class="col ">
-                <input type="radio" class="form-check-input" id="reduced"  name="changedESA" onChange="check_vals();" value="Reduced" />
+                <input type="radio" class="form-check-input" id="reduced"  name="changedESA" onChange="check_vals(this);" value="Reduced" />
                 <label for="reduced" class="form-check-label">Reduced</label>
               </div>
             </div>
@@ -172,7 +172,7 @@
 
             <div class="row mt-3">
               <div class="col">
-                <button id="myButton" type="button" class="btn btn-primary w-100" onClick="check_vals();">Submit</button>
+                <button id="myButton" type="button" class="btn btn-primary w-100" onClick="check_vals(this);">Submit</button>
               </div>
               <div class="col">
                 <button type="button" class="btn btn-warning w-100" onClick="window.location.reload();">Clear</button>

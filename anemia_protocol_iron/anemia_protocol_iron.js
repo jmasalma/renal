@@ -53,14 +53,20 @@ function check_vals_iron() {
 
   tsat = $("#tsat").val();
 
-  if (tsat < 20) {
+  if (tsat && tsat <= 1) {
+    $("#tsat").val(null);
+    alert("Please make sure you are using a valid TSAT %...");
+    tsat = $("#tsat").val();
+  }
+
+  if (tsat> 1 && tsat < 20) {
     $("#hgb").show();
     $("#iron_store").hide();
     hgb_val = $("#hgb_val").val();
     if (hgb_val > 115 && !isEmpty(hgb_val)) {
       $("#result").html("Do not start/continue IV iron loading dose if Hb is greater than 115 g/L -> give IV iron monthly maintenance dose");
     } else if (hgb_val <= 115 && !isEmpty(hgb_val)) {
-      $("#result").html("REPLETE IRON STORES<br />1 gram IV iron loading dose given as:<br />• Iron sucrose 100 mg (Venofer) every dialysis for 10 doses<br />• Or Sodium ferric gluconate (Ferrlecit): 125 mg IV every dialysis for 8 doses<br />Measure TSAT and Ferritin at next blood work cycle");
+      $("#result").html("REPLETE IRON STORES<br />1 gram IV iron loading dose given as:<br />• Iron sucrose (Venofer) 100 mg IV every dialysis for 10 doses OR,<br />• Sodium ferric gluconate (Ferrlecit) 125 mg IV every dialysis for 8 doses<br />Measure TSAT and Ferritin at next blood work cycle");
     } else {
       $("#result").html("");
     }
@@ -77,11 +83,11 @@ function check_vals_iron() {
     if (receving) {
       $("#result").html("Continue current maintenance dose<br />Measure TSAT and Ferritin at next blood work cycle");
     } else if (loading) {
-      $("#result").html("Proceed with Iron IV Maintenance:<br />Iron Sucrose (Venofer) 100 mg IV every 2 weeks<br />Or Sodium ferric gluconate (Ferrlecit) 125 mg IV every 2 weeks<br />Measure TSAT and Ferritin at next blood work cycle");
+      $("#result").html("Proceed with IV Iron Maintenance:<br />Iron Sucrose (Venofer) 100 mg IV every 2 weeks<br />Or Sodium ferric gluconate (Ferrlecit) 125 mg IV every 2 weeks<br />Measure TSAT and Ferritin at next blood work cycle");
     } else if (hold) {
       $("#result").html("Restart iron maintenance dose:<br />Iron Sucrose (Venofer) 100 mg IV monthly<br />Or Sodium ferric gluconate (Ferrlecit) 125 mg IV monthly<br />Measure TSAT and Ferritin at next blood work cycle");
     } else if (no_iron) {
-      $("#result").html("Proceed with Iron IV Maintenance:<br />Iron Sucrose (Venofer) 100 mg IV monthly<br />Or Sodium ferric gluconate (Ferrlecit) 125 mg IV monthly<br />Measure TSAT and Ferritin at next blood work cycle");
+      $("#result").html("Proceed with IV Iron Maintenance:<br />Iron Sucrose (Venofer) 100 mg IV monthly<br />Or Sodium ferric gluconate (Ferrlecit) 125 mg IV monthly<br />Measure TSAT and Ferritin at next blood work cycle");
     }
 
 

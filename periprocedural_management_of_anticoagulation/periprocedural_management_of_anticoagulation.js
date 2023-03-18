@@ -203,8 +203,13 @@ function check_vals(val) {
   }
 
   if (onDOAC) {
-    $("#result").html("Hold DOAC 2 days before procedure");
-    $("#result_2").html("");
+    if (onAntiplatlets) {
+      $("#result").html("Hold DOAC 2 days before procedure");
+      $("#result_2").html("Hold " + antiplatletType + " for 5 days before procedure");
+    } else {
+      $("#result").html("Hold DOAC 2 days before procedure");
+      $("#result_2").html("");
+    }
   }
 
   if (procedureTypeHold && !isEmpty(procedureDate) && onWarfrin && !isEmpty(weight)) {
